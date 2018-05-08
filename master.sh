@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export SPARK_MASTER_HOST=``
+export SPARK_MASTER_HOST='0.0.0.0'
 
 . "/spark/sbin/spark-config.sh"
 
