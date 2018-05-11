@@ -37,3 +37,4 @@ RUN apt-get install -y libgfortran3 libatlas3-base libopenblas-base
 RUN apt-get install ssh rsync
 RUN wget -O - http://www-us.apache.org/dist/hadoop/common/hadoop-2.7.6/hadoop-2.7.6.tar.gz | tar zx
 RUN mv /hadoop* /hadoop
+COPY etc /hadoop/etc
