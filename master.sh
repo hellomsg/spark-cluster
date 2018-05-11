@@ -10,7 +10,7 @@ mkdir -p $SPARK_MASTER_LOG
 
 export SPARK_HOME=/spark
 
-ln -sf /dev/stdout $SPARK_MASTER_LOG/spark-master.out
+find etc/hadoop/ -type f | xargs sed -i "s/\$HOST/$(hostname)/g"
 
 cd /spark/bin && /spark/sbin/../bin/spark-class org.apache.spark.deploy.master.Master \
-    --ip $SPARK_MASTER_HOST --port $SPARK_MASTER_PORT --webui-port $SPARK_MASTER_WEBUI_PORT >> $SPARK_MASTER_LOG/spark-master.out
+    --ip $SPARK_MASTER_HOST --port $SPARK_MASTER_PORT --webui-port $SPARK_MASTER_WEBUI_PORT 
