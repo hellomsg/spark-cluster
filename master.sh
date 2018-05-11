@@ -10,7 +10,7 @@ mkdir -p $SPARK_MASTER_LOG
 
 export SPARK_HOME=/spark
 
-find etc/hadoop/ -type f | xargs sed -i "s/\$HOST/$(hostname)/g"
+find etc/hadoop/ -type f | xargs sed -i "s/\$HOST/localhost/g"
 cp -R etc/hadoop /hadoop/etc
 
 /etc/init.d/ssh start
