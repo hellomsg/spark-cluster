@@ -13,6 +13,8 @@ export SPARK_HOME=/spark
 find etc/hadoop/ -type f | xargs sed -i "s/\$HOST/$(hostname)/g"
 cp -R etc/hadoop /hadoop/etc
 
+/etc/init.d/ssh start
+
 /hadoop/bin/hdfs namenode -format
 /hadoop/sbin/start-dfs.sh
 
