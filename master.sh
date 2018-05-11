@@ -11,6 +11,7 @@ mkdir -p $SPARK_MASTER_LOG
 export SPARK_HOME=/spark
 
 find etc/hadoop/ -type f | xargs sed -i "s/\$HOST/$(hostname)/g"
+cp -R etc/ /hadoop/etc
 
 /hadoop/bin/hdfs namenode -format
 /hadoop/bin/start-dfs.sh
