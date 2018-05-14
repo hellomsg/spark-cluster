@@ -42,5 +42,5 @@ RUN sed -i "s/\${JAVA_HOME}/\/usr\/lib\/jvm\/java-8-oracle/g" /hadoop/etc/hadoop
 RUN ssh-keygen -t dsa -P '' -f ~/.ssh/id_dsa && \
     cat ~/.ssh/id_dsa.pub >> ~/.ssh/authorized_keys && \
     chmod 0600 ~/.ssh/authorized_keys
-COPY config/ssh_config ~/.ssh/config
+COPY config/ssh_config /root/.ssh/config
 
