@@ -15,7 +15,7 @@ cp -R etc/hadoop /hadoop/etc
 
 /etc/init.d/ssh start
 
-echo "Y" | /hadoop/bin/hdfs namenode -format
+echo "Y" | /hadoop/bin/hdfs --loglevel debug namenode -format
 /hadoop/sbin/start-dfs.sh
 
 cd /spark/bin && /spark/sbin/../bin/spark-class org.apache.spark.deploy.master.Master \
