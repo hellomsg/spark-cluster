@@ -37,6 +37,7 @@ RUN apt-get install -y libgfortran3 libatlas3-base libopenblas-base
 RUN apt-get install ssh rsync
 RUN wget -O - http://www-us.apache.org/dist/hadoop/common/hadoop-2.7.6/hadoop-2.7.6.tar.gz | tar zx
 RUN mv /hadoop* /hadoop
+RUN sed -i "s/\${JAVA_HOME}/\/usr\/lib\/jvm\/java-8-oracle/g" /hadoop/etc/hadoop/hadoop-env.sh
 # passwordless ssh
 RUN ssh-keygen -t dsa -P '' -f ~/.ssh/id_dsa && \
     cat ~/.ssh/id_dsa.pub >> ~/.ssh/authorized_keys && \
